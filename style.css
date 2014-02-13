@@ -175,3 +175,7 @@ iframe{
 	.tablet{left:0px}
 	.mobile{left:180px}*/
 }
+
+.display .trim {
+	max-height: 100%;
+}
