@@ -6,8 +6,7 @@ Description: Add some product screenshots
 Version: 0.1
 Author: Aristeides Stathopoulos
 Author URI:  http://aristeides.com
-Software Licensing: a0abaffea901e14bf9b20eada692f9fe
-Software Licensing URL: http://shoestrap.org
+GitHub Plugin URI:   https://github.com/shoestrap/shoestrap-gridder
 */
 
 if ( !defined( 'SPP_PLUGIN_URL' ) )
@@ -152,6 +151,12 @@ function ssscrenshot_preview_content() {
 add_action( 'shoestrap_pre_main', 'ssscrenshot_preview_content', 10 );
 
 function shoestrap_preview_enqueue_scripts() {
+	global $post;
+
+	// Check if a custom Jumbotron content exists
+	if ( !ssscrenshot_check_preview_content( $post->ID ) )
+		return;
+
 	wp_enqueue_style( 'preview_styles', SPP_PLUGIN_URL . '/style.css', false, null );
 	wp_register_script( 'preview_script', SPP_PLUGIN_URL . '/script.js', false, null, false );
 	wp_enqueue_script( 'preview_script' );
