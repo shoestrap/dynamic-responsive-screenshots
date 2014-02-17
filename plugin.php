@@ -163,6 +163,6 @@ function shoestrap_preview_enqueue_scripts() {
 	wp_enqueue_style( 'preview_styles', SPP_PLUGIN_URL . '/style.css', false, null );
 	wp_register_script( 'preview_script', SPP_PLUGIN_URL . '/script.js', false, null, false );
 	wp_enqueue_script( 'preview_script' );
-	wp_enqueue_script('jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js', array('jquery'), '1.10.4');
+	wp_enqueue_script( 'jquery-ui-draggable' );
 }
 add_action( 'wp_enqueue_scripts', 'shoestrap_preview_enqueue_scripts', 130 );
